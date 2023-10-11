@@ -7,12 +7,10 @@ import {
 
 // GET School detail
 export function* handleGetCatgory(action) {
-  console.log(action, "action called from manage");
   try {
     const res = yield call(getCategory, action);
     const status = res.status;
     const data = res.data.data;
-    console.log(res);
     if (status === 200) {
       yield put({ type: GET_CATEGORY_SUCCESS, data });
     } else {
