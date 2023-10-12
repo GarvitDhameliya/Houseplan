@@ -1,8 +1,9 @@
 import { useDispatch } from "react-redux";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import "./App.css";
 import { useEffect } from "react";
 import { GET_CATEGORY_PROGRESS } from "./redux-saga/category/action/action";
-import Data from "./components/Data";
+import Admin from "./components/admin/Admin";
 
 function App() {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <Data />
+      <Admin />
     </div>
   );
 }
