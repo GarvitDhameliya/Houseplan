@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const Data = () => {
-  const data = useSelector((state) => state.categoryReducer);
   const sunCategorydata = useSelector((state) => state.subCategoryReducer);
 
   console.log(data, "this is saga effect");

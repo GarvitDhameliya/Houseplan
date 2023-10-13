@@ -2,6 +2,10 @@ import {
   GET_CATEGORY_ERROR,
   GET_CATEGORY_PROGRESS,
   GET_CATEGORY_SUCCESS,
+  POST_CATEGORY_DUPLICATE,
+  POST_CATEGORY_ERROR,
+  POST_CATEGORY_PROGRESS,
+  POST_CATEGORY_SUCCESS,
 } from "../action/action";
 
 const initialState = {
@@ -47,6 +51,38 @@ const categoryReducer = (state = initialState, action) => {
         getCategoryError: action.data,
         categoryIsLoaded: false,
       };
+       // POST CATEGORY REDUCER
+
+    case POST_CATEGORY_PROGRESS:
+      return {
+        ...state,
+        postCategoryProgress: true,
+        postCategoryError: null,
+        categoryIsLoaded: false,
+      };
+    case POST_CATEGORY_SUCCESS:
+      return {
+        ...state,
+        postCategoryProgress: false,
+        postCategoryError: null,
+        categoryIsLoaded: true,
+        category: state.category.concat(action.data),
+      };
+    case POST_CATEGORY_DUPLICATE:
+      return {
+        ...state,
+        postCategoryProgress: false,
+        postCategoryError: action.data,
+        categoryIsLoaded: false,
+      };
+    case POST_CATEGORY_ERROR:
+      return {
+        ...state,
+        postCategoryProgress: false,
+        postCategoryError: action.data,
+        categoryIsLoaded: false,
+      };
+
     default:
       return state;
   }

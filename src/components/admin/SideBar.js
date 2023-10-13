@@ -28,14 +28,16 @@ const SideBar = () => {
       </header>
       <div className="menu-bar">
         <div className="menu">
+        <ul>
           <li className="search-box">
             <i className="bx bx-search icon" />
             <input type="text" placeholder="Search Ganes..." />
           </li>
+        </ul>
           <ul className="menu-links">
-            {allRoute.map((val) => (
-              <li className="nav-link">
-                <NavLink to={val.route} className='text-dark ps-2'>{val.navlink}</NavLink>
+            {allRoute.map((val,ind) => (
+              <li key={`navlink${ind}`}>
+                <NavLink to={val.route} className='nav-link ps-2' >{val.navlink} </NavLink>
               </li>
             ))}
           </ul>

@@ -188,7 +188,7 @@ body.dark .sidebar header .toggle {
   font-weight: 500;
   transition: var(--tran-05);
 }
-.sidebar li a {
+.sidebar li a{
   list-style: none;
   height: 100%;
   background-color: transparent;
@@ -201,8 +201,12 @@ body.dark .sidebar header .toggle {
   transition: var(--tran-03);
 }
 
-.sidebar li a:hover {
-  background-color: var(--primary-color);
+.sidebar li .nav-link {
+  background-color: transparent;
+}
+.sidebar li .nav-link.active {
+  background-color: var(--primary-color) !important;
+  color: #e4e9f7;
 }
 .sidebar li a:hover .icon,
 .sidebar li a:hover .text {
@@ -310,3 +314,5 @@ body.dark .switch::before {
 body.dark .home .text {
   color: var(--text-color);
 }
+
+

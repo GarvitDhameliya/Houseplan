@@ -1,9 +1,12 @@
 import React from 'react'
+import HeadingHeader from '../commonComponents/HeadingHeader'
 
-const home = () => {
+const Home = () => {
   return (
-    <div>home</div>
+    <div>
+      <HeadingHeader heading_name='Home'/>
+    </div>
   )
 }
 
-export default home
+export default Home
